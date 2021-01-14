@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_060232) do
+ActiveRecord::Schema.define(version: 2021_01_14_010835) do
+
+  create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "service_name", null: false
+    t.string "genre", null: false
+    t.float "contractcycle_month"
+    t.float "contractcycle_year"
+    t.float "monthly_fee"
+    t.float "annual_fee"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
