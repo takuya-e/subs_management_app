@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_060232) do
+ActiveRecord::Schema.define(version: 2021_01_14_020806) do
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "user_id"
+    t.bigint "subscription_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subscription_id"], name: "index_posts_on_subscription_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "service_name", null: false
+    t.string "genre", null: false
+    t.float "contractcycle_month"
+    t.float "contractcycle_year"
+    t.float "monthly_fee"
+    t.float "annual_fee"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.date "contract_date", null: false
+    t.date "cancellation_date"
+    t.bigint "user_id"
+    t.bigint "subscription_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subscription_id"], name: "index_user_contracts_on_subscription_id"
+    t.index ["user_id"], name: "index_user_contracts_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +65,10 @@ ActiveRecord::Schema.define(version: 2021_01_10_060232) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
+  add_foreign_key "posts", "subscriptions"
+  add_foreign_key "posts", "users"
+  add_foreign_key "user_contracts", "subscriptions"
+  add_foreign_key "user_contracts", "users"
 end
