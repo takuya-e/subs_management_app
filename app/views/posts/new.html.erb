@@ -1,0 +1,9 @@
+<h1>口コミの新規投稿</h1>
+<%= form_with model: @post, local: true do |form| %>
+  <div>
+    <%= form.label :content, "内容" %>
+    <%= form.text_field :content%>
+  </div>
+  <div>
+    <%= form.submit "送信" %>
+<% end %>
