@@ -1,0 +1,2 @@
+class UserContract < ApplicationRecord
+end
