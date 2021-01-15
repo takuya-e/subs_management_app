@@ -1,0 +1,26 @@
+<h1 class="text-center">みんなの口コミ</h1>
+<%= link_to "新規投稿", new_post_path, class: 'btn btn-primary' %>
+<table class="table table-bordered table-striped mt-4">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">投稿内容</th>
+      <th scope="col">サブスクリプション名</th>
+      <th scope="col">投稿者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td>
+          <%= link_to post.content, post%>
+          </td>
+        <td>
+          "選択したサブスク名を入れる"        
+        </td>
+        <td>
+          "投稿した人の名前を入れる"
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

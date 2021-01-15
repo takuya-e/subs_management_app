@@ -1,0 +1,8 @@
+<h1 class="text-center">口コミ詳細</h1>
+
+<p>サブスク名：</p>
+<p>内容 <%= @post.content %></p>
+<p>投稿日時 <%= @post.created_at %></p>
+<%= link_to "編集", edit_post_path %>
+<%= link_to "削除", @post, method: :delete, data: { confirm: "削除しますか？"}  %>
+
