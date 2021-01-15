@@ -11,7 +11,8 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <%= render 'layouts/flash_messages' %>
-    <%= yield %>
+    <div class="container-fluid py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl'%> ">
+      <%= yield %>
+    </div>
   </body>
 </html>
