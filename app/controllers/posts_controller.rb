@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.order(id: :asc)
   end
 
   def show
@@ -16,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
