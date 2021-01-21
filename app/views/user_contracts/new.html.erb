@@ -1,0 +1,8 @@
+<h1>サブスク情報登録</h1>
+  <%= form_with model: @user_contract, local: true do |form| %>
+    <%= form.collection_select(:subscription_id, @subscriptions, :id, :service_name, {prompt: "登録するサブスクを選択"} ) %>
+    <%= form.label :contract_date, "利用開始日:", class: 'control-label' %>
+    <%= form.date_field :contract_date, class: 'from-control' %>
+    <%= form.submit "登録する", class: "btn btn-outline-primary" %>
+  <% end %>
+

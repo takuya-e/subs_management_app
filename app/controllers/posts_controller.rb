@@ -9,10 +9,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @subscriptions = Subscription.all
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @post = current_user.posts.new(content: post_params[:content], user_id: post_params[:user_id], subscription_id: post_params[:subscription_id])
 
     if @post.save
       redirect_to @post, notice: "投稿が完了しました"
@@ -40,6 +41,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :user_id, :subscription_id)
   end
 end
