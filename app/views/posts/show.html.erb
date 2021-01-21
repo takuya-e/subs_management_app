@@ -1,6 +1,6 @@
 <h1 class="text-center">口コミ詳細</h1>
 
-<p>サブスク名：</p>
+<p>サブスク名：<%= @post.subscription.service_name %></p>
 <p>内容 <%= @post.content %></p>
 <p>投稿日時 <%= @post.created_at %></p>
 <% if @post.user_id == current_user.id %>

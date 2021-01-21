@@ -12,13 +12,13 @@
     <% @posts.each do |post| %>
       <tr>
         <td>
-          <%= link_to post.content, post%>
+          <%= link_to post.content, post %>
           </td>
         <td>
-          "選択したサブスク名を入れる"        
+          <%= post.subscription.service_name %>       
         </td>
         <td>
-          "投稿した人の名前を入れる"
+          <%= post.user.name %>
         </td>
       </tr>
     <% end %>

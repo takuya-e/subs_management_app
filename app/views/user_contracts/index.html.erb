@@ -1,0 +1,36 @@
+<h1 class="text-center">契約サブスク一覧</h1>
+<%= link_to "サブスク情報登録", new_user_contract_path, class: 'btn btn-primary' %>
+<table class="table table-bordered table-striped mt-4">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">契約日</th>
+      <th scope="col">サブスクリプション名</th>
+      <th scope="col">ジャンル</th>
+      <th scope="col">契約単価（月）</th>
+      <th scope="col">契約単価（年）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_contracts.each do |user_contract| %>
+      <tr>
+        <td>
+          <%= user_contract.contract_date %>
+        </td>
+        <td>
+          <%= user_contract.subscription.service_name %>
+          </td>
+        <td>
+          <%= user_contract.subscription.genre %>       
+        </td>
+        <td>
+          <%= user_contract.subscription.monthly_fee %>
+        </td>
+        <td>
+          <%= user_contract.subscription.annual_fee %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

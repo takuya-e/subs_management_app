@@ -1,4 +1,10 @@
 <h1><%= @user.name %> さんのマイページ</h1>
+
+  <div class="nav-item active">
+    <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>     
+  </div>
+
+  <%= link_to "サブスク管理", user_contracts_path, class: 'btn btn-primary' %>
 <br>
 <h2>このページで出来るようにすること</h2>
 <p>契約情報の一覧表示/契約日・サービス名・料金</p>

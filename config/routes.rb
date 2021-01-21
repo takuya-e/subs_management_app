@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :posts
+  resources :user_contracts
 end
