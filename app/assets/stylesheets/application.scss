@@ -14,21 +14,25 @@
  *= require_self
  */
 
- @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
- .mw-md {
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+
+.mw-md {
    max-width: 400px;
  }
 
- .mw-xl {
+.mw-xl {
   max-width: 1200px;
  }
 
- .alert-notice {
+.alert-notice {
    @extend .alert-info;
  }
 
- .alert-alert {
+.alert-alert {
    @extend .alert-danger;
  }
 
