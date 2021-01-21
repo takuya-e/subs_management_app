@@ -1,6 +1,6 @@
 class UserContractsController < ApplicationController
   def index
-    @user_contracts = UserContract.all.order(contract_date: :asc )
+    @user_contracts = current_user.user_contracts.all.order(contract_date: :asc )
   end
 
   def show
