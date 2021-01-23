@@ -20,6 +20,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/regular";
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
+
+* {font-family: 'M PLUS 1p', sans-serif;}
+
+
 .mw-md {
    max-width: 400px;
  }
