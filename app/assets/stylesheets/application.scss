@@ -24,14 +24,16 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 * {font-family: 'M PLUS 1p', sans-serif;}
 
+// .mw-md {
+//    max-width: 400px;
+//  }
 
-.mw-md {
-   max-width: 400px;
- }
+.container-login {
+  @extend .container-fluid;
+  max-width: 400px;
+  padding: 2rem;
+}
 
-.mw-xl {
-  max-width: 1200px;
- }
 
 .alert-notice {
    @extend .alert-info;
@@ -41,4 +43,21 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
    @extend .alert-danger;
  }
 
- 
+.navbar {
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-right: 4%;
+  padding-left: 4%;
+}
+
+footer {
+  background-color:black;
+  text-align: center;
+  padding: 26px 0;
+  margin-top: 50px;
+}
+
+footer p {
+  color: white;
+  font-size: 0.9rem;
+}

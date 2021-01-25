@@ -1,12 +1,62 @@
-<%= render 'layouts/flash_messages' %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>submanetop</title>
+</head>
+<body>
+  <section class="mainvisual">
+    <div class="catchcopy-title">
+      <h1>サブマネなら<br>使っているサブスクを<br>カンタン管理</h1>
+      <div class="catchcopy-addition">
+      <% if user_signed_in? %>
+        <div class="form-group">
+          <p>\ お気に入りのサブスクを共有しよう！ /</p>
+          <%= link_to 'みんなの口コミはこちら', posts_path, class: "btn btn--green btn--radius" %>
+        </div>
+      <% else %>
+          <p>\ まずはお試し！ /</p>
+          <%= link_to "無料会員登録", new_user_registration_path, class: "btn btn--green btn--radius" %>
+      <% end %>
+      </div>
+    </div>
+    <div class="subscription-image">
+      <img src="/assets/subscription.jpg" alt="top画">
+    </div>
+  </section>
+  <main>
+  <section class="questions">
+    <div class="content-wrapper">
+      <div class="contents">
+        <h2>サブスクリプションサービスを利用していて、こんな経験ありませんか？<br>サブマネはこんなお悩みをサクッと解決！</h2>
+          <div class="content">
+            <ul class="content-list">
+              <li><i class="fas fa-check"></i> どのサービスを契約しているか覚えてない</li>
+              <li><i class="fas fa-check"></i> 少額だし、いつか使うかもと放置</li>
+              <li><i class="fas fa-check"></i> 無料期間があるからとりあえず契約してそのまま</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="posts">
+    <div class="content-wrapper">
+      <div class="contents">
+        <h3>最新の口コミ投稿</h3>
 
- 
-<%= link_to "投稿する", new_post_url %>
-
-<h2>TOPページ</h2>
-<p>ページ左上はロゴ、右上は新規登録・ログイン・マイページボタン・ログアウトボタン</p>
-<p>何ができるサイトなのかを記載</p>
-<p>投稿が一部表示されている</p>
-<p>投稿一覧ページへ飛ぶことができる</p>
-<p>投稿するページへ飛ぶことができる</p>
-<p></p>
+        <p>全ての投稿内容を見るためには無料会員登録が必要です。</p>
+      </div>
+    </div>
+    <% @posts.each do |post| %>
+    <div class="card border-primary mb-3" style="max-width: 60rem;">
+      <div class="card-header border-primary"><%= post.user.name %>さん</div>
+      <div class="card-body">
+        <p class="card-text"><%= post.content %></p>
+      </div>
+      <div class="card-footer bg-transparent border-primary"><%= post.created_at %></div>
+    </div>
+    <% end %>
+  </section>
+</body>
+</html>
