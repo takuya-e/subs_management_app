@@ -1,0 +1,87 @@
+.mainvisual {
+  background-color: #343a40;
+  color: white;
+  display: flex;
+}
+
+.catchcopy-title {
+  width: 50vw;
+  padding-top: 100px;
+  padding-left: 80px;
+  line-height: 1.5;
+}
+
+.catchcopy-title h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.catchcopy-addition {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.subscription-image img {
+  width: 50vw;
+  height: auto;
+}
+
+.btn--green,
+a.btn--green {
+  color: #fff;
+  background-color: #55c500;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.btn--green:hover,
+a.btn--green:hover {
+  color: #fff;
+  background: #55c500;
+}
+
+.questions {
+  margin: 30px 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ffcc00;
+}
+
+.questions .contents h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.content {
+  text-align: center
+}
+
+ul {
+  list-style: none;
+}
+
+.content-list {
+  text-align: left;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  font-size: 25px;
+}
+
+.posts .contents h3 {
+  margin-top: 60px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.posts .contents p {
+  color: grey;
+  text-align: center;
+}
+
+.card {
+  margin: 40px auto;
+  font-weight: bold;
+}

@@ -11,8 +11,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <div class="container-fluid py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl'%> ">
+    <div class="base-container">
       <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
-</html>
+  </html>
